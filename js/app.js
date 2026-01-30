@@ -14,6 +14,7 @@ import initCursor from "./common/cursor.js";
 // 페이지별 기능
 import initMainPage from "./pages/main.js";
 import initLifeCards from "./pages/about.js";
+import initWorkPage from "./pages/work.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     // -- 1. 헤더/푸터 include 먼저 실행
@@ -34,5 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (document.body.classList.contains("page--about")) {
         initLifeCards();
+    }
+
+    if (document.body.classList.contains("page--work")) {
+        initWorkPage();
     }
 });

@@ -2,7 +2,7 @@ export default function initLifeCards() {
 
     const cards = [
         { 
-            img: "assets/about/card1-1.jpg",
+            img: "assets/about/card1.jpg",
             title: "대외활동",
             description: "춘천시민을 위한 버스킹 및 자선연주회, 뮤직비디오 기획과 촬영, 편집"
         },

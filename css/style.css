@@ -85,7 +85,7 @@ a {
   /* Font size */
   --font-size-2xl: 3.2rem; /* page title */
   --font-size-xl: 2.4rem; /* section title */
-  --font-size-lg: 1.8rem; /* subtitle */
+  --font-size-lg: 2rem; /* subtitle */
   --font-size-md: 1.4rem; /* body, label */
   --font-size-sm: 1.2rem; /* caption */
   /* Line height */
@@ -345,6 +345,7 @@ body.is-locked {
 .footer__email-link:hover {
   text-decoration: underline;
   text-decoration-thickness: 4px;
+  text-underline-offset: 8px;
 }
 .footer__row {
   display: flex;
@@ -891,5 +892,202 @@ body.is-locked {
   }
   .life__card-img {
     height: 240px;
+  }
+}
+.work {
+  width: 100%;
+}
+
+.work__title {
+  margin-bottom: var(--space-4);
+}
+
+/* ====================
+    Tabs buttons
+======================= */
+.work__tabs {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.work__tab-button {
+  padding: var(--space-2) var(--space-4);
+  border-radius: 999px;
+  background-color: #eeeeee;
+  border: none;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.work__tab-button:hover {
+  background-color: #dddddd;
+  padding: var(--space-2) var(--space-5);
+}
+.work__tab-button.is-active {
+  background-color: var(--color-brand-primary);
+  color: var(--color-text-inverse);
+}
+
+/* ====================
+    Tab Card
+======================= */
+.work__card-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0 auto;
+}
+
+.work__card {
+  height: 420px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  background: #fff;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.work__card-image {
+  border: 1px solid red;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.work__card-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+}
+
+.work__card-body {
+  padding-left: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+}
+
+.work__card-title {
+  color: var(--color-brand-primary);
+  margin-bottom: 0;
+}
+
+.work__card-desc {
+  font-size: var(--font-size-sm);
+  margin-bottom: 0;
+}
+
+.work__card-date {
+  font-size: var(--font-size-xsm);
+  font-weight: var(--font-weight-light);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+
+/* ============================
+    Tools
+============================ */
+.work__card-tools {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.work__tool {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.work__tool-icon {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+/* ============================
+    Link Button
+============================ */
+.work__card-link {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: var(--color-brand-primary);
+  color: var(--color-text-inverse);
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+.work__card-link:hover {
+  transform: translateX(4px);
+}
+
+/* ============================
+    Empty State
+============================ */
+.work__empty {
+  text-align: center;
+  padding: 80px 0;
+  font-size: 16px;
+  color: var(--color-text-muted);
+}
+
+/* ============================
+    Responsive
+============================ */
+@media (max-width: 768px) {
+  .work__card {
+    height: 560px;
+    grid-template-columns: 1fr;
+  }
+  .work__card-image img {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .work__card-body {
+    padding: var(--space-3) var(--space-4);
+    justify-content: start;
+    gap: 0;
+  }
+  .work__card-title {
+    margin-bottom: var(--space-2);
+  }
+  .work__card-tools {
+    margin-bottom: var(--space-2);
+  }
+  .work__tool {
+    width: 42px;
+    height: 42px;
+  }
+  .work__card-link {
+    bottom: 24px;
+    right: 24px;
+  }
+}
+@media (max-width: 430px) {
+  .work__tabs {
+    gap: var(--space-2);
+  }
+  .work__tab-button {
+    font-size: 12px;
   }
 }/*# sourceMappingURL=style.css.map */
