@@ -1,0 +1,141 @@
+.header {
+    width: 100%;
+    height: 80px;
+    background-color: var(--color-brand-primary);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+
+    &__inner {
+        height: 100%;
+        margin: 0 auto;
+        padding: 0 8%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* ===== Logo ===== */
+    &__logo-wrapper {
+        margin: 0;
+        line-height: 0;
+    }
+
+    &__logo {
+        height: 58px;
+        width: auto;
+        display: block;
+    }
+
+    /* ===== Navigation ===== */
+    &__menu {
+        display: flex;
+        gap: var(--space-6);
+    }
+
+    &__menu-link {
+        position: relative;
+        font-size: var(--font-size-sm);
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        color: var(--color-text-inverse);
+        text-decoration: none;
+
+        opacity: 0.85;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &.is-active {
+            opacity: 1;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -6px;
+                width: 100%;
+                height: 2px;
+                background-color: var(--color-text-inverse);
+            }
+        }
+    }
+}
+
+.header__hamburger {
+    display: none;
+    width: 28px;
+    height: 20px;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    z-index: 9999;
+
+    flex-direction: column;
+    justify-content: space-between;
+
+    span {
+        display: block;
+        height: 2px;
+        background: var(--color-text-inverse);
+    }
+}
+
+.mobile-menu {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(var(--color-brand-primary-rgb), 0.9);
+
+    inset: 0; // top/right/bottom/left: 0
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+
+    &.is-open {
+        transform: translateX(0);
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-6);
+
+        a {
+            font-size: var(--font-size-md);
+            color: var(--color-text-inverse);
+            text-decoration: none;
+            font-weight: 600;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 60px;
+    }
+
+    .header__logo {
+        height: 42px;
+    }
+
+    .header__nav {
+        display: none;
+    }
+
+    .header__hamburger {
+        display: flex;
+        width: 24px;
+        height: 16px;
+    }
+}

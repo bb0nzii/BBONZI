@@ -1,0 +1,82 @@
+:root {
+    /* Brand */
+    --color-brand-primary: #035900;
+    --color-brand-primary-rgb: 3, 89, 0;
+
+    /* Background */
+    --color-bg-base: #FFFCF9;
+    --color-bg-section: #FFF5E9;
+
+    /* Text */
+    --color-text-primary: #030509;
+    --color-text-muted: #595959;
+    --color-text-inverse: #FFFCF9;
+    --color-text-inverse-muted: #FFF5E9;
+
+    /* Accent */
+    --color-accent-sub: #359000;
+}
+
+:root {
+    /* Font size */
+    --font-size-2xl: 3.2rem; /* page title */
+    --font-size-xl: 2.4rem;  /* section title */
+    --font-size-lg: 1.8rem;  /* subtitle */
+    --font-size-md: 1.4rem;  /* body, label */
+    --font-size-sm: 1.2rem;  /* caption */
+
+    /* Line height */
+    --line-height-tight: 1.2;
+    --line-height-base: 1.5;
+    --line-height-relaxed: 1.7;
+
+    /* Font weight */
+    --font-weight-black: 900;
+    --font-weight-extrabold: 800;
+    --font-weight-bold: 700;
+    --font-weight-semibold: 600;
+    --font-weight-medium: 500;
+    --font-weight-regular: 400;
+    --font-weight-light: 300;
+    --font-weight-thin: 100;
+}
+
+:root {
+    --space-1: 0.4rem;
+    --space-2: 0.8rem;
+    --space-3: 1.2rem;
+    --space-4: 1.6rem;
+    --space-5: 2.4rem;
+    --space-6: 3.2rem;
+    --space-7: 4.8rem;
+}
+
+
+@media (max-width: 768px) {
+    :root {
+        --font-size-2xl: 2.4rem;
+        --font-size-xl: 1.9rem;
+        --font-size-lg: 1.6rem;
+        --font-size-md: 1.3rem;
+        --font-size-sm: 1.1rem;
+
+        --space-7: 3.2rem;
+        --space-6: 2.4rem;
+    }
+}
+
+@media (max-width: 375px) {
+    :root {
+        --font-size-2xl: 2.4rem;
+        --font-size-xl: 1.6rem;
+        --font-size-lg: 1.3rem;
+        --font-size-md: 1rem;
+        --font-size-sm: 0.8rem;
+    }
+}
+
+
+/*
+레이아웃과 간격은 Bootstrap 유틸리티를 사용하고,
+타이포그래피와 컬러는 프로젝트 디자인 토큰으로 분리해 관리했습니다.
+*/

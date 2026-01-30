@@ -1,0 +1,18 @@
+@use "base/base";
+@use "base/reset";
+@use "base/typography";
+
+@use "abstracts/variables";
+@use "abstracts/mixins";
+
+@use "assets/font";
+
+@use "layout/pages";
+
+@use "utilities/scroll-animate";
+
+@use "components/header";
+@use "components/footer";
+@use "components/scroll-top";
+
+@use "pages/main";

@@ -1,0 +1,24 @@
+.page--main {
+    .header {
+        background-color: transparent;
+    }
+
+    .header.is-scrolled {
+        background-color: var(--color-brand-primary);
+    }
+}
+
+
+body.is-locked {
+    overflow: hidden;
+}
+
+
+.section {
+    padding: 0 5%;
+    margin-bottom: var(--space-7);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
