@@ -5,7 +5,7 @@ export default function initCursor() {
   document.addEventListener("mousemove", (e) => {
     const trail = document.createElement("img");
 
-    trail.src = "/assets/logo/sunflower.png"; // ⚠️ 경로 수정 중요
+    trail.src = "assets/logo/sunflower.png"; // ⚠️ 경로 수정 중요
     trail.style.position = "absolute";
     trail.style.width = "80px";
     trail.style.pointerEvents = "none";
