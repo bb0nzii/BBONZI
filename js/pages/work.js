@@ -1,4 +1,5 @@
 import { worksData } from "../data/works-data.js";
+import initScrollAnimate from "../common/scroll-animate.js";
 
 export default function initWorkPage() {
   const list = document.querySelector(".work__card-list");
@@ -14,6 +15,7 @@ export default function initWorkPage() {
     vue: "assets/tools/vue.png",
     vuetify: "assets/tools/vuetify.png",
     react: "assets/tools/react.png",
+    bootstrap: "assets/tools/bootstrap.png",
     firebase: "assets/tools/firebase.png",
     figma: "assets/tools/figma.png",
     photoshop: "assets/tools/photoshop.png",
@@ -47,7 +49,7 @@ export default function initWorkPage() {
     // 카드 반복 출력
     filtered.forEach((work) => {
       const li = document.createElement("li");
-      li.className = "work__card";
+      li.className = "work__card scroll-animate";
 
       li.innerHTML = `
         <div class="work__card-image">
@@ -94,7 +96,7 @@ export default function initWorkPage() {
             work.link
               ? `
                 <a href="${work.link}" target="_blank" class="work__card-link">
-                  →
+                  <img src="assets/icon/arrow-right.svg">
                 </a>
               `
               : ""
@@ -105,6 +107,8 @@ export default function initWorkPage() {
 
       list.appendChild(li);
     });
+
+    initScrollAnimate();
   }
 
   /* ============================

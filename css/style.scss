@@ -1,9 +1,7 @@
 @use "base/base";
 @use "base/reset";
 @use "base/typography";
-
-@use "abstracts/variables";
-@use "abstracts/mixins";
+@use "base/variables";
 
 @use "assets/font";
 
@@ -14,6 +12,7 @@
 @use "components/header";
 @use "components/footer";
 @use "components/scroll-top";
+@use "components/buttons";
 
 @use "pages/main";
 @use "pages/about";

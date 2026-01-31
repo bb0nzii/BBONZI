@@ -1,0 +1,22 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: var(--space-2) var(--space-4);
+    border-radius: 999px;
+
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
