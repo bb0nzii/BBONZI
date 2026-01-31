@@ -131,12 +131,26 @@ export default function initWorkPage() {
   });
 
   /* ============================
-     초기 실행
+    초기 실행 (hash 탭 연결)
   ============================ */
 
-  // 첫 버튼 active 표시
-  buttons[0].classList.add("is-active");
+  // URL hash 값 가져오기 (#coding, #logo 이런거)
+  const hash = window.location.hash.replace("#", "");
 
-  // 첫 화면 web 출력
-  renderCards("coding");
+  // hash가 있으면 그걸 category로 사용
+  // 없으면 기본값 coding
+  const initialCategory = hash || "coding";
+
+  // 버튼 active 처리
+  buttons.forEach((btn) => {
+    if (btn.dataset.tab === initialCategory) {
+      btn.classList.add("is-active");
+    } else {
+      btn.classList.remove("is-active");
+    }
+  });
+
+  // 카드 출력
+  renderCards(initialCategory);
+
 }
