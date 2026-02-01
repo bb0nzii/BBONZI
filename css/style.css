@@ -88,6 +88,7 @@ a {
   --font-size-lg: 2rem; /* subtitle */
   --font-size-md: 1.4rem; /* body, label */
   --font-size-sm: 1.2rem; /* caption */
+  --font-size-xsm: 1rem;
   /* Line height */
   --line-height-tight: 1.2;
   --line-height-base: 1.5;
@@ -120,6 +121,7 @@ a {
     --font-size-lg: 1.6rem;
     --font-size-md: 1.3rem;
     --font-size-sm: 1.1rem;
+    --font-size-xsm: 0.9rem;
     --space-1: 0.2rem;
     --space-2: 0.6rem;
     --space-3: 1rem;
@@ -136,6 +138,7 @@ a {
     --font-size-lg: 1.3rem;
     --font-size-md: 1rem;
     --font-size-sm: 0.9rem;
+    --font-size-xsm: 0.7rem;
     --space-3: 0.8rem;
     --space-4: 1.2rem;
     --space-5: 1.8rem;
@@ -143,10 +146,6 @@ a {
     --space-7: 3rem;
   }
 }
-/*
-레이아웃과 간격은 Bootstrap 유틸리티를 사용하고,
-타이포그래피와 컬러는 프로젝트 디자인 토큰으로 분리해 관리했습니다.
-*/
 .page--main .header {
   background-color: transparent;
 }
@@ -799,6 +798,7 @@ body.is-locked {
 }
 
 .about-me__item {
+  font-size: var(--font-size-xsm);
   padding-left: var(--space-1);
   margin-bottom: var(--space-2);
 }
@@ -855,7 +855,7 @@ body.is-locked {
 
 .life__card-text {
   width: 100%;
-  padding: var(--space-2) var(--space-4);
+  padding: var(--space-2) var(--space-4) var(--space-4);
 }
 
 .life__card-title {
@@ -962,7 +962,6 @@ body.is-locked {
 }
 
 .work__card {
-  height: 420px;
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   background: #fff;
@@ -977,11 +976,18 @@ body.is-locked {
   overflow: hidden;
 }
 .work__card-image img {
+  aspect-ratio: 3/2;
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   display: block;
+  transition: transform 0.3s ease;
+}
+.work__card-image img:hover {
+  transform: scale(1.05);
 }
 
 .work__card-body {
@@ -1064,6 +1070,60 @@ body.is-locked {
   padding: 80px 0;
   font-size: 16px;
   color: var(--color-text-muted);
+}
+
+/* ============================
+   Work Modal
+============================ */
+.work-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+}
+
+.work-modal.is-open {
+  display: block;
+}
+
+.work-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.work-modal__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(90%, 900px);
+  max-height: 85vh;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-modal__img {
+  width: 100%;
+  height: auto;
+  max-height: 85vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.work-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #222;
 }
 
 /* ============================

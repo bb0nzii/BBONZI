@@ -42,6 +42,7 @@
 }
 
 .about-me__item {
+    font-size: var(--font-size-xsm);
     padding-left: var(--space-1);
     margin-bottom: var(--space-2);
 
@@ -101,7 +102,7 @@
 
 .life__card-text {
     width: 100%;
-    padding: var(--space-2) var(--space-4);
+    padding: var(--space-2) var(--space-4) var(--space-4);
 }
 
 .life__card-title {
@@ -169,6 +170,7 @@
     &__img-wrapper {
         width: 240px;
     }
+
 }
 
 .life {

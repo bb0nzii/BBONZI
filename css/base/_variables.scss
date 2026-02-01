@@ -24,6 +24,7 @@
     --font-size-lg: 2rem;  /* subtitle */
     --font-size-md: 1.4rem;  /* body, label */
     --font-size-sm: 1.2rem;  /* caption */
+    --font-size-xsm: 1rem;
 
     /* Line height */
     --line-height-tight: 1.2;
@@ -59,6 +60,7 @@
         --font-size-lg: 1.6rem;
         --font-size-md: 1.3rem;
         --font-size-sm: 1.1rem;
+        --font-size-xsm: 0.9rem;
 
         --space-1: 0.2rem;
         --space-2: 0.6rem;
@@ -77,6 +79,7 @@
         --font-size-lg: 1.3rem;
         --font-size-md: 1rem;
         --font-size-sm: 0.9rem;
+        --font-size-xsm: 0.7rem;
 
         --space-3: 0.8rem;
         --space-4: 1.2rem;
@@ -85,9 +88,3 @@
         --space-7: 3rem;
     }
 }
-
-
-/*
-레이아웃과 간격은 Bootstrap 유틸리티를 사용하고,
-타이포그래피와 컬러는 프로젝트 디자인 토큰으로 분리해 관리했습니다.
-*/

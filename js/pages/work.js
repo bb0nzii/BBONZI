@@ -50,6 +50,7 @@ export default function initWorkPage() {
     filtered.forEach((work) => {
       const li = document.createElement("li");
       li.className = "work__card scroll-animate";
+      li.dataset.category = work.category;
 
       li.innerHTML = `
         <div class="work__card-image">
@@ -107,6 +108,47 @@ export default function initWorkPage() {
 
       list.appendChild(li);
     });
+
+    // ============================
+    // Modal 기능 (웹콘텐츠만)
+    // ============================
+
+    const modal = document.querySelector("#workModal");
+    const modalImg = modal.querySelector(".work-modal__img");
+    const modalClose = modal.querySelector(".work-modal__close");
+    const modalOverlay = modal.querySelector(".work-modal__overlay");
+
+    // content 카테고리만 클릭 확대
+    if (category === "content", "logo") {
+      const images = list.querySelectorAll(".work__card-image img");
+
+      images.forEach((img) => {
+        img.style.cursor = "zoom-in";
+
+        img.addEventListener("click", () => {
+          modal.classList.add("is-open");
+          modalImg.src = img.src;
+        });
+      });
+    }
+
+    // 닫기 버튼
+    modalClose.addEventListener("click", () => {
+      modal.classList.remove("is-open");
+    });
+
+    // 바깥 클릭 닫기
+    modalOverlay.addEventListener("click", () => {
+      modal.classList.remove("is-open");
+    });
+
+    // ESC 닫기
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        modal.classList.remove("is-open");
+      }
+    });
+
 
     initScrollAnimate();
   }

@@ -60,7 +60,6 @@
 }
 
 .work__card {
-    height: 420px;
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     background: #fff;
@@ -75,10 +74,17 @@
     overflow: hidden;
 
     img {
+        aspect-ratio: 3 / 2;
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
+        object-position: center;
         display: block;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
     }
 }
 
@@ -174,6 +180,69 @@
     font-size: 16px;
     color: var(--color-text-muted);
 }
+
+
+/* ============================
+   Work Modal
+============================ */
+
+.work-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: none;
+}
+
+.work-modal.is-open {
+  display: block;
+}
+
+.work-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.work-modal__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: min(90%, 900px);
+  max-height: 85vh;
+
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-modal__img {
+  width: 100%;
+  height: auto;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
+.work-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+
+  font-size: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #222;
+}
+
+
+
 
 /* ============================
     Responsive
